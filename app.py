@@ -190,12 +190,12 @@ with right:
         effects.append({"Indicator": NICE[feature].split(" (")[0],
                         "Effect (years)": what_if - predict(model, changed)})
     effects = pd.DataFrame(effects)
-    effects["Direction"] = np.where(effects["Effect (years)"] >= 0, "Raises estimate", "Lowers estimate")
+    effects["Direction"] = np.where(effects["Effect (years)"] >= 0, "Raises", "Lowers")
     bars = alt.Chart(effects).mark_bar(cornerRadiusEnd=3).encode(
         x=alt.X("Effect (years):Q", title="Years added (+) or removed (−)"),
         y=alt.Y("Indicator:N", sort=alt.EncodingSortField("Effect (years)", op="sum", order="descending"),
                 title=None, axis=alt.Axis(labelLimit=220)),
-        color=alt.Color("Direction:N", scale=alt.Scale(domain=["Raises estimate", "Lowers estimate"], range=[BLUE, ORANGE]),
+        color=alt.Color("Direction:N", scale=alt.Scale(domain=["Raises", "Lowers"], range=[BLUE, ORANGE]),
                         legend=alt.Legend(orient="bottom", title=None)),
         tooltip=["Indicator:N", alt.Tooltip("Effect (years):Q", format="+.2f")],
     )

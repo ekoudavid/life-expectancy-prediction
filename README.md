@@ -4,13 +4,15 @@
 
 Machine-learning models trained on WHO data for 183 countries (2000–2015) and tested on countries they have never seen. The project also shows a common trap, **target leakage**: adding mortality indicators makes the scores look much better, but only because life expectancy is calculated from death rates.
 
+**🌍 Try the live app: [life-expectancy-explorer.streamlit.app](https://life-expectancy-explorer.streamlit.app/)**
+
 <a href="https://colab.research.google.com/github/ekoudavid/life-expectancy-prediction/blob/main/notebooks/life_expectancy_modelling.ipynb"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ---
 
 ## Interactive app
 
-**Life Expectancy Explorer** (Streamlit): pick any country and year, compare actual and predicted life expectancy, and move sliders to explore *what if* its development indicators were different. Each country's estimate comes from a model that never saw that country.
+**[Life Expectancy Explorer](https://life-expectancy-explorer.streamlit.app/)** (Streamlit): pick any country and year, compare actual and predicted life expectancy, and move sliders to explore *what if* its development indicators were different. Each country's estimate comes from a model that never saw that country.
 
 Run it locally with `streamlit run app.py`.
 
