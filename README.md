@@ -8,6 +8,14 @@ Machine-learning models trained on WHO data for 183 countries (2000–2015) and 
 
 ---
 
+## Interactive app
+
+**Life Expectancy Explorer** (Streamlit): pick any country and year, compare actual and predicted life expectancy, and move sliders to explore *what if* its development indicators were different. Each country's estimate comes from a model that never saw that country.
+
+Run it locally with `streamlit run app.py`.
+
+---
+
 ## Key results
 
 Average prediction error on **37 held-out countries** (none of their data was used in training):
@@ -58,6 +66,7 @@ Average prediction error on **37 held-out countries** (none of their data was us
 │   └── life_expectancy_modelling.ipynb       # the full analysis, with outputs
 ├── src/
 │   └── data_prep.py                          # reusable, documented cleaning pipeline
+├── app.py                                    # Streamlit app (Life Expectancy Explorer)
 ├── requirements.txt
 └── README.md
 ```
